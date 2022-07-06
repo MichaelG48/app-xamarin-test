@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Music.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="Black">
+
+            <Frame BackgroundColor="#363062"
+                   Padding="10" CornerRadius="4">
+                <Label Text="MUSIC SEARCH" HorizontalTextAlignment="Center" 
+                       TextColor="#dedede" FontSize="35"
+                       TextDecorations="Underline"/>
+            </Frame>
+
+            <CollectionView ItemsSource="{Binding Start}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                          RowDefinitions="Auto,*"
+                          ColumnDefinitions="Auto,*"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center">
+                            <Image Grid.RowSpan="1"
+                               Source="{Binding ImagenUrl}"
+                               Aspect="AspectFill"
+                               HeightRequest="250"
+                               WidthRequest="500"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <Label Text="BIENVENIDO A TU PLATAFORMA FAVORITA DE MÚSICA"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" Margin="70,0,70,86" FontSize="25" 
+                   HorizontalTextAlignment="Center" TextDecorations="None">
+            </Label>
+
+            <Button x:Name="BtnPaginaSiguiente" 
+                    Text="Catálogo Artistas" 
+                    Clicked="BtnArtistas_Clicked"
+                    BackgroundColor="#584153"
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,125"
+                    Padding="10"
+                    FontSize="18"
+                    CornerRadius="20"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

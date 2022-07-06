@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Music.Artistas">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="#282729">
+
+            <Frame BackgroundColor="#363062"
+                   Padding="10" CornerRadius="4">
+                <Label Text="MUSIC SEARCH" HorizontalTextAlignment="Center" TextColor="#dedede" FontSize="35"/>
+            </Frame>
+            
+            <CollectionView ItemsSource="{Binding Cantantes}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnSelectionChanged">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10"
+                          RowDefinitions="Auto,*"
+                          ColumnDefinitions="Auto,*">
+                            <Image Grid.RowSpan="2"
+                               Source="{Binding ImagenUrl}"
+                               Aspect="AspectFit"
+                               HeightRequest="150"
+                               WidthRequest="150"/>
+                            <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Text="{Binding Nombre}"
+                               VerticalOptions="Start"
+                               Margin="10,8,0,0"
+                               FontSize="20"/>
+                            <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Text="{Binding Genero}"
+                               VerticalOptions="Center"
+                               Margin="10,0,0,0"
+                               FontSize="15"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <Button x:Name="BtnPaginaSiguiente" 
+                    Text="Registrar Usuario" 
+                    Clicked="BtnRegistrar"
+                    BackgroundColor="#524894"
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,0"
+                    Padding="10"
+                    FontSize="18"
+                    CornerRadius="10"
+                    WidthRequest="200"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

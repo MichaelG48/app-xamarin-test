@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Music.RegistrarUsuario">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="white">
+            <!--<Frame BackgroundColor="#363062" Padding="24" CornerRadius="0">
+                <Label Text="Práctica del 23-05-22" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="#dedede" FontSize="38"/>
+            </Frame>-->
+
+            <Label x:Name="lbl_titulo" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30" Margin="0,15,0,0">Registro de Usuarios</Label>
+
+            <StackLayout Padding="30,20,30,0">
+                <Label x:Name="lbl_nombrePersona">Nombre:</Label>
+                <Entry x:Name="txt_nombrePersona" Placeholder="Nombre"></Entry>
+
+                <Label x:Name="lbl_aPaternoPersona">Apellido Paterno:</Label>
+                <Entry x:Name="txt_aPaternoPersona"  Placeholder="Apellido paterno"></Entry>
+
+                <Label x:Name="lbl_aMaternoPersona">Apellido Materno:</Label>
+                <Entry x:Name="txt_aMaternoPersona" Placeholder="Apellido materno"></Entry>
+
+                <Label x:Name="lbl_telPersona">Telefono:</Label>
+                <Entry x:Name="txt_telPersona" Placeholder="0000000000"></Entry>
+
+                <Picker Title="Estado" x:Name="pickerEstados" SelectedIndexChanged="pickerEstados_SelectedIndexChanged"/>
+
+                <Picker Title="Municipio" x:Name="pickerMunicipios" SelectedIndexChanged="pickerMunicipios_SelectedIndexChanged" IsEnabled="False"/>
+
+                <Picker Title="Colonia" x:Name="pickerColonias" SelectedIndexChanged="pickerColonias_SelectedIndexChanged" IsEnabled="False"/>
+
+                <Button x:Name="BtnRegistrar" Clicked="BtnRegistrar_Clicked"
+                    Text="Registrar" 
+                    BackgroundColor="#000000"
+                    TextColor="white"
+                    HorizontalOptions="End"
+                    Margin="0,25,0,0"
+                    Padding="10"
+                    FontSize="18"
+                    CornerRadius="20"
+                    WidthRequest="150" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
